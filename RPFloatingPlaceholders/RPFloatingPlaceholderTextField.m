@@ -105,7 +105,15 @@
     
     _floatingLabel.text = _cachedPlaceholder;
     [self adjustFramesForNewPlaceholder];
-    
+
+    _shouldDrawPlaceholder = !self.hasText;
+
+    if (_shouldDrawPlaceholder) {
+        [self hideFloatingLabel];
+    } else {
+        [self showFloatingLabelWithAnimation:YES];
+    }
+
     // Flags the view to redraw
     [self setNeedsDisplay];
 }
