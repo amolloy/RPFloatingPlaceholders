@@ -104,6 +104,14 @@
     
     _floatingLabel.text = _placeholder;
     [self adjustFramesForNewPlaceholder];
+
+	_shouldDrawPlaceholder = !self.hasText;
+
+    if (_shouldDrawPlaceholder) {
+        [self hideFloatingLabel];
+    } else {
+        [self showFloatingLabelWithAnimation:YES];
+    }
 }
 
 // This method was deprecated in iOS 6.1+, so we replicate it here
