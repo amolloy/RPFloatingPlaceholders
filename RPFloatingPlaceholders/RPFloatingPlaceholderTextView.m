@@ -183,12 +183,12 @@
                                                 NSForegroundColorAttributeName : placeholderGray};
         
         if ([self respondsToSelector:@selector(tintColor)]) {
-            CGRect placeholderFrame = CGRectMake(5.f, 10.f, self.frame.size.width - 10.f, self.frame.size.height - 20.f);
+            CGRect placeholderFrame = CGRectMake(5.f, 10.f, self.frame.size.width - 10.f, self.font.lineHeight);
             [_placeholder drawInRect:placeholderFrame
                       withAttributes:placeholderAttributes];
 
         } else {
-            CGRect placeholderFrame = CGRectMake(8.f, 8.f, self.frame.size.width - 10.f, self.frame.size.height - 20.f);
+            CGRect placeholderFrame = CGRectMake(8.f, 8.f, self.frame.size.width - 10.f, self.font.lineHeight);
             NSAttributedString *attributedPlaceholder = [[NSAttributedString alloc] initWithString:_placeholder
                                                                                         attributes:placeholderAttributes];
             [attributedPlaceholder drawInRect:placeholderFrame];
